@@ -1,0 +1,11 @@
+--- xasm-xasm-3.2.1/source/app.d.orig	2022-12-08 11:49:40.000000000 +0100
++++ xasm-xasm-3.2.1/source/app.d	2024-12-13 18:05:08.992127349 +0100
+@@ -3003,7 +3003,7 @@ int main(string[] args) {
+ 			exitCode = 2;
+ 			if (objectFilename != "-") {
+ 				objectStream.close();
+-				core.stdc.stdio.remove(toStringz(objectFilename));
++				std.stdio.remove(toStringz(objectFilename));
+ 			}
+ 		}
+ 		if (listingStream != stdout)
