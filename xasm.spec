@@ -1,6 +1,6 @@
 #
 # Conditional build:
-%bcond_with	gdc	# use GDC instead of DMD
+%bcond_without	gdc	# use GDC instead of DMD
 
 Summary:	6502 cross-assembler with original syntax extensions
 Summary(pl.UTF-8):	Asembler skrośny dla procesorów 6502 z oryginalnymi rozszerzeniami składni
@@ -16,7 +16,7 @@ Patch0:		%{name}-gdc.patch
 URL:		https://github.com/pfusik/xasm
 BuildRequires:	asciidoc
 %if %{with gdc}
-BuildRequires:	gcc-d
+BuildRequires:	gcc-d >= 6:11
 %else
 BuildRequires:	dmd >= 2.101
 %endif
